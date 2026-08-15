@@ -89,6 +89,11 @@ button { cursor: pointer; }
 .danger-button { background: var(--red-soft); color: var(--red); }
 .full { width: 100%; }
 .login-note { color: #a1aebc; text-align: center; margin-top: 28px; font-size: 11px; }
+.login-demo { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 18px; }
+.login-demo > div { padding: 10px 11px; border: 1px solid var(--line); border-radius: 9px; background: #fbfdfd; }
+.login-demo strong, .login-demo span { display: block; }
+.login-demo strong { color: var(--navy); font-size: 11px; }
+.login-demo span { color: var(--muted); font-size: 10px; margin-top: 4px; }
 
 .app-shell { min-height: 100vh; display: flex; }
 .sidebar { width: 246px; background: var(--navy); color: #fff; padding: 22px 15px 18px; display: flex; flex-direction: column; flex-shrink: 0; }
@@ -290,6 +295,7 @@ tbody tr:hover { background: #fbfefe; }
 .empty-state { padding: 46px 20px; text-align: center; color: var(--muted); }
 
 .form-card { max-width: 900px; padding: 22px; }
+.form-hint { color: var(--muted); font-size: 11px; margin: -7px 0 16px; line-height: 1.5; }
 .form-section { border-top: 1px solid var(--line); padding-top: 20px; margin-top: 20px; }
 .form-section:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
 .form-section h3 { color: var(--navy); font: 700 15px 'Manrope'; margin: 0 0 16px; }
@@ -304,12 +310,37 @@ tbody tr:hover { background: #fbfefe; }
 .notification-item.unread { background: #f8fcfc; }
 .notification-item p { margin: 0; color: var(--ink); font-size: 11px; line-height: 1.45; }
 .notification-item span { display: block; color: var(--muted); margin-top: 5px; font-size: 10px; }
+.notification-item .secondary-button { margin-left: auto; align-self: center; }
 .notification-icon { width: 27px; height: 27px; border-radius: 7px; display: grid; place-items: center; flex-shrink: 0; }
 .notification-icon.red { color: var(--red); background: var(--red-soft); }
 .notification-icon.gold { color: var(--gold); background: var(--gold-soft); }
 .notification-icon.green { color: var(--teal-dark); background: var(--teal-soft); }
 .toast { position: fixed; bottom: 25px; left: 50%; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; background: var(--navy); color: #fff; border-radius: 8px; padding: 12px 16px; font-size: 12px; box-shadow: var(--shadow); transition: .25s; z-index: 50; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+.patient-mode .sidebar { background: #173f5f; }
+.patient-mode .sidebar .brand-mark .mark-icon { background: #3da9aa; }
+.patient-mode .nav-item.active { background: #285879; }
+.patient-welcome { margin-bottom: 22px; padding: 24px 27px; border-radius: var(--radius); color: #fff; background: linear-gradient(120deg, #1d6574, #183152); display: flex; justify-content: space-between; align-items: center; gap: 20px; overflow: hidden; position: relative; }
+.patient-welcome::after { content: ''; position: absolute; right: 10%; top: -130px; width: 330px; height: 330px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; }
+.patient-welcome h2 { margin: 9px 0 5px; font: 800 22px 'Manrope'; position: relative; z-index: 1; }
+.patient-welcome p { margin: 0; color: #c0dce2; font-size: 12px; position: relative; z-index: 1; }
+.patient-welcome .eyebrow { color: #8de6e0; position: relative; z-index: 1; }
+.patient-welcome-note { display: inline-flex; align-items: center; gap: 6px; margin-top: 17px; color: #d8eef0; font-size: 11px; position: relative; z-index: 1; }
+.appointment-badge { width: 105px; height: 105px; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid rgba(255,255,255,.25); border-radius: 20px; background: rgba(255,255,255,.1); position: relative; z-index: 1; }
+.appointment-badge svg { color: #8de6e0; margin-bottom: 4px; }
+.appointment-badge strong { font: 800 23px 'Manrope'; }
+.appointment-badge span { color: #c0dce2; font-size: 10px; margin-top: 2px; }
+.patient-metric-number { font-size: 23px; }
+.task-check { color: var(--muted); font-size: 18px; font-weight: 400; }
+.action-dot.teal-dot { background: var(--teal); box-shadow: 0 0 0 4px var(--teal-soft); }
+.readonly-note { display: flex; gap: 5px; align-items: center; justify-content: center; border-top: 1px solid var(--line); padding-top: 13px; color: var(--muted); font-size: 10px; }
+.readonly-callout { margin: 0 20px 20px; padding: 11px 12px; display: flex; align-items: center; gap: 7px; border: 1px solid #d8e7ed; border-radius: 8px; background: #f7fbfd; color: #668094; font-size: 10px; line-height: 1.45; }
+.readonly-callout.standalone { margin-top: 17px; }
+.patient-schedule-list .schedule-person small { display: flex; align-items: center; gap: 5px; margin-top: 6px; color: var(--teal-dark); font-size: 10px; }
+.upcoming-row { background: #f5fbfb; border: 1px solid #d8efec; border-radius: 9px; padding: 16px 12px; margin-bottom: 10px; }
+.history-card { margin-top: 18px; }
+.history-card .schedule-row { padding-top: 16px; }
 
 @media (max-width: 1180px) {
   .sidebar { width: 218px; }
@@ -412,4 +443,10 @@ tbody tr:hover { background: #fbfefe; }
   .timeline-event::before { left: 70px; }
   .timeline { padding-left: 5px; padding-right: 5px; }
   .notification-panel { right: 12px; width: calc(100vw - 24px); }
+  .login-demo { grid-template-columns: 1fr; }
+  .patient-welcome { align-items: flex-start; padding: 20px; }
+  .appointment-badge { width: 82px; height: 82px; }
+  .patient-welcome h2 { font-size: 18px; }
+  .patient-welcome-note { max-width: 210px; }
+  .notification-item .secondary-button { margin-left: 0; }
 }

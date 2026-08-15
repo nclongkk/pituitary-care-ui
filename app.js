@@ -42,7 +42,7 @@ const navItems = [
 ];
 const detailTabs = ['Overview', 'Timeline', 'Clinical', 'Hormones', 'MRI', 'Ophthalmology', 'Treatment', 'Follow-up', 'Documents'];
 
-let state = { screen: 'dashboard', detailTab: 'Overview', patientDetailTab: 'Tổng quan', query: '', notifications: false, timelineFilter: 'All events' };
+let state = { screen: 'login', detailTab: 'Overview', patientDetailTab: 'Tổng quan', query: '', notifications: false, timelineFilter: 'All events' };
 const app = document.querySelector('#app');
 const toast = document.querySelector('#toast');
 
